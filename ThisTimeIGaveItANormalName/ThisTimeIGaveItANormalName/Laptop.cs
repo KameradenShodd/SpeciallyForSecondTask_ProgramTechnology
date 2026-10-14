@@ -1,46 +1,48 @@
 using System;
-
-/// <summary>
-/// Represents a laptop device that can be charged.
-/// </summary>
-public class Laptop : Device, IChargeable
+namespace ThisTimeIGaveItANormalName
 {
-	/// <summary>Capacity.</summary>
-	public int BatteryCapacity { get; set; }
-
-	/// <summary>longlasting.</summary>
-	public bool IsLongLasting { get { return BatteryCapacity >= 5000; } }
-
 	/// <summary>
-	/// laptop but actually kinda cool maybe chill may-okay
+	/// Represents a laptop device that can be charged.
 	/// </summary>
-	public Laptop(string serial, string model, double power, int batteryCapacity): base(serial, model, power)
+	public class Laptop : Device, IChargeable
 	{
-		BatteryCapacity = batteryCapacity;
-	}
+		/// <summary>Capacity.</summary>
+		public int BatteryCapacity { get; set; }
 
-	/// <summary>
-	/// laptop,,,,even!? L_L
-	/// </summary>
-	public Laptop(string model, int batteryCapacity): this("N/A", model, 0, batteryCapacity)
-	{
-	}
+		/// <summary>longlasting.</summary>
+		public bool IsLongLasting { get { return BatteryCapacity >= 5000; } }
 
-	/// <overriding interface/>
-	public override void TurnOn()
-	{
-		Console.WriteLine($"{Model} turns on.");
-	}
+		/// <summary>
+		/// laptop but actually kinda cool maybe chill may-okay
+		/// </summary>
+		public Laptop(string serial, string model, double power, int batteryCapacity) : base(serial, model, power)
+		{
+			BatteryCapacity = batteryCapacity;
+		}
 
-	/// <overriding interface/>
-	public void Charge()
-	{
-		Console.WriteLine($"{Model} charging...");
-	}
+		/// <summary>
+		/// laptop,,,,even!? L_L
+		/// </summary>
+		public Laptop(string model, int batteryCapacity) : this("N/A", model, 0, batteryCapacity)
+		{
+		}
 
-	/// <inheritdoc/>
-	public override string ToString()
-	{
-		return $"[Laptop] {Model}, {Power}W, source: {Source}";
+		/// <overriding interface/>
+		public override void TurnOn()
+		{
+			Console.WriteLine($"{Model} turns on.");
+		}
+
+		/// <overriding interface/>
+		public void Charge()
+		{
+			Console.WriteLine($"{Model} charging...");
+		}
+
+		/// <inheritdoc/>
+		public override string ToString()
+		{
+			return $"[Laptop] {Model}, {Power}W, source: {Source}";
+		}
 	}
 }

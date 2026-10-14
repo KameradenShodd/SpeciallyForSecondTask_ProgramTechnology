@@ -1,49 +1,51 @@
 using System;
-
-/// <summary>
-/// Represents a phone device that can be charged.
-/// </summary>
-public class Phone : Device, IChargeable
+namespace ThisTimeIGaveItANormalName
 {
-	/// <summary>Capacity.</summary>
-	public int ScreenSize { get; set; }
-
-	/// <summary>longlasting.</summary>
-	public bool IsPhablet { get { return ScreenSize >= 100; } }
-
 	/// <summary>
-	/// phone but actually kinda cool maybe chill may-okay
+	/// Represents a phone device that can be charged.
 	/// </summary>
-	public Phone(string serial, string model, double power, int screenSize)
-		: base(serial, model, power)
+	public class Phone : Device, IChargeable
 	{
-		ScreenSize = screenSize;
-	}
+		/// <summary>Capacity.</summary>
+		public int ScreenSize { get; set; }
 
-	/// <summary>
-	/// phone,,,,even!? L_L
-	/// </summary>
-	public Phone(string model, int screenSize)
-		: this("N/A", model, 0, screenSize)
-	{
-	}
+		/// <summary>longlasting.</summary>
+		public bool IsPhablet { get { return ScreenSize >= 5; } }
 
-	/// <overriding interface/>
-	public override void TurnOn()
-	{
-		Console.WriteLine($"{Model} turns on.");
-	}
+		/// <summary>
+		/// phone but actually kinda cool maybe chill may-okay
+		/// </summary>
+		public Phone(string serial, string model, double power, int screenSize)
+			: base(serial, model, power)
+		{
+			ScreenSize = screenSize;
+		}
 
-	/// <overriding interface/>
-	public void Charge()
-	{
-		Console.WriteLine($"{Model} charging...");
-	}
+		/// <summary>
+		/// phone,,,,even!? L_L
+		/// </summary>
+		public Phone(string model, int screenSize)
+			: this("N/A", model, 0, screenSize)
+		{
+		}
 
-	/// <inheritdoc/>
-	public override string ToString()
-	{
-		return $"[Phone] {Model}, {Power}W, source: {Source}";
-	}
+		/// <overriding interface/>
+		public override void TurnOn()
+		{
+			Console.WriteLine($"{Model} turns on.");
+		}
 
+		/// <overriding interface/>
+		public void Charge()
+		{
+			Console.WriteLine($"{Model} charging...");
+		}
+
+		/// <inheritdoc/>
+		public override string ToString()
+		{
+			return $"[Phone] {Model}, {Power}W, source: {Source}";
+		}
+
+	}
 }
