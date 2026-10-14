@@ -24,7 +24,7 @@ namespace ThisTimeIGaveItANormalName
         public PowerSource Source { get; set; } = PowerSource.Mains;
 
         /// <summary>consumption now in watts.</summary>
-        public double PowerInWatts => Power * 1000;
+        public double PowerInWatts { get { return Power * 1000; } }
 
         /// <summary>
         /// behold! A device! Created! Oh god, how could it be? Now i need my five ducking month vacation for god's sake pls take me out of here i am making a game and i am procrastinating constantly how to solve my problems with work's ethics i need more sleep goddamit okay but did you know that uhhhhhhhhhh fun facts about ducks, ducks don't deserve fun facts they are terrible creatures, especially male ones.
@@ -46,6 +46,7 @@ namespace ThisTimeIGaveItANormalName
         /// <summary>
         /// Bz-bz
         /// </summary>
+        /// 
         public abstract void TurnOn();
     }
 }
