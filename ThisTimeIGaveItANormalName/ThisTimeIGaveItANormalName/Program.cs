@@ -26,6 +26,7 @@ namespace ThisTimeIGaveItANormalName
                 {
                     chargeable.Charge();
                 }
+
                 else
                 {
                     Console.WriteLine($"{device_device.Model} cannot be charged.");
